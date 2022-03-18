@@ -12,11 +12,11 @@ const Slide = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
+    // centerMode: true,
   };
   return (
-    <Container>
-      <h2> Single Item</h2>
-      <Slider {...settings}>
+    <Holder>
+      <Container {...settings}>
         <MySlide>
           <MyImage src="/Assets/images/slider-badag.jpg" />
         </MySlide>
@@ -29,23 +29,56 @@ const Slide = () => {
         <MySlide>
           <MyImage src="/Assets/images/slider-scales.jpg" />
         </MySlide>
-      </Slider>
-    </Container>
+      </Container>
+    </Holder>
   );
 };
 
 export default Slide;
 
-const Container = styled.div`
-  height: 400px;
+const Holder = styled.div`
   width: 100%;
-  background-color: blue;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+`;
+
+const Container = styled(Slider)`
+  width: 90%;
+  ul li button {
+    &::before {
+      font-size: 10px;
+      color: rgb(150, 158, 171);
+    }
+
+    li.slick-active button:before {
+      color: white;
+    }
+
+    .slick-list {
+      overflow: visible;
+    }
+
+    button {
+      z-index: 1;
+    }
+  }
 `;
 
 const MySlide = styled.div`
   height: 350px;
-  width: 90%;
+  width: 100%;
   background-color: darkcyan;
+  border-radius: 10px;
+
+  :hover {
+    border: 3px solid #fff;
+  }
 `;
 
-const MyImage = styled.img``;
+const MyImage = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+`;
