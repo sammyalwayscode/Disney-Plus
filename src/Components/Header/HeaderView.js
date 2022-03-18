@@ -122,6 +122,28 @@ const Nav = styled.div`
     font-size: 15px;
     margin-left: 3px;
     color: #fff;
+    cursor: pointer;
+    position: relative;
+
+    ::after {
+      content: "";
+      position: absolute;
+      height: 2px;
+      background-color: #fff;
+      left: 0;
+      right: 0;
+      bottom: -7px;
+      opacity: 0;
+      /* transition: all 350ms; */
+      transition: all 350ms cubic-bezier(0.25, 0.46, 0.45, 0.95) 0s;
+    }
+
+    :hover {
+      transform: scale(1.1);
+      ::after {
+        opacity: 1;
+      }
+    }
   }
 `;
 const Icon = styled.img`
