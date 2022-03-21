@@ -1,11 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import Slider from "../Slider/Slide";
+import Slides from "../Slider/Slides";
+import Viewers from "../Viewers/Viewers";
 
 const Home = () => {
   return (
     <Container>
-      <Slider />
+      <Slides />
+      <Viewers />
     </Container>
   );
 };
@@ -19,7 +21,7 @@ const Container = styled.div`
   position: relative;
 
   :before {
-    content: "Hello";
+    content: "";
     position: absolute;
     top: 0;
     bottom: 0;
@@ -29,5 +31,6 @@ const Container = styled.div`
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    z-index: -1;
   }
 `;
