@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Recomend from "../Recomend/Recomend";
 import Slides from "../Slider/Slides";
 import Viewers from "../Viewers/Viewers";
 
@@ -8,6 +9,7 @@ const Home = () => {
     <Container>
       <Slides />
       <Viewers />
+      <Recomend />
     </Container>
   );
 };
